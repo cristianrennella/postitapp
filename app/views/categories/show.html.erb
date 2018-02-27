@@ -1,0 +1,8 @@
+<% header = link_to('All Posts', posts_path) + " &raquo; #{@category.name}".html_safe %>
+<%= render 'shared/content_title', title: header %>
+ 
+<% @category.post.each do |post| %>
+	<%= render 'posts/post', post: post %>		
+<% end %>
+
+<%= link_to 'Back', posts_path %>
